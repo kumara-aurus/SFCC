@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="PaymentTransaction">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="aurusPayAPTID">
+                <display-name xml:lang="x-default">Aurus Pay Transaction Identifier (APTID)</display-name>
+                <description xml:lang="x-default">Aurus Pay Transaction Identifier - used by OMS for Aurus Pay Post Auth</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="aurusPayAPTN">
+                <display-name xml:lang="x-default">Aurus Pay Ticket Number (APTN)</display-name>
+                <description xml:lang="x-default">Aurus Pay Ticket Number - used by OMS for Aurus Pay Post Auth</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="aurusPayOOT">
+                <display-name xml:lang="x-default">Aurus Pay One Order Token (OOT)</display-name>
+                <description xml:lang="x-default">Aurus Pay One Order Token - used by OMS for Aurus Pay Post Auth</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Custom">
+                <display-name xml:lang="x-default">Custom</display-name>
+                <attribute attribute-id="aurusPayOOT"/>
+                <attribute attribute-id="aurusPayAPTN"/>
+                <attribute attribute-id="aurusPayAPTID"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="Aurus_corporateIdentifier">
+                <display-name xml:lang="x-default">CorpID - corporate Identifier from AurusPay</display-name>
+                <description xml:lang="x-default">This is a 4 Numeric field which is unique corporate Identifier from AurusPay®.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Aurus_domainId">
+                <display-name xml:lang="x-default">DomainId - Aurus domain ID for identify respective iFrame, CSS for different Domain</display-name>
+                <description xml:lang="x-default">This field identifies the Aurus provided 3-digit Domain identification number. Aurus will provide Domain ID for identify respective iFrame, CSS for different Domain.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Aurus_merchantIdentifier">
+                <display-name xml:lang="x-default">MerchantIdentifier - identifies the Aurus provided merchant identification number</display-name>
+                <description xml:lang="x-default">This field identifies the Aurus provided merchant identification number. Every merchant registered with Aurus must have this value in order to process any financial/non-financial transactions. Public merchant identifier is used only for token transaction and private merchant identifier is used for charging the card. Both the merchant identifier would be unique.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Aurus_storeId">
+                <display-name xml:lang="x-default">StoreId - identifies the Aurus provided 5-12 digit variable length merchant identification number</display-name>
+                <description xml:lang="x-default">This field identifies the Aurus provided 5-12 digit variable length merchant identification number. Every merchant registered with Aurus must have this value in order to process any financial/non-financial transactions.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Aurus_terminalId">
+                <display-name xml:lang="x-default">TerminalId - Aurus terminal identification number</display-name>
+                <description xml:lang="x-default">This field identifies the Aurus provided 8-digit terminal identification number. Every merchant registered with Aurus must have this value in order to process any financial/non-financial transactions. One store can have multiple terminals assigned to it.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="Aurus_urlType">
+                <display-name xml:lang="x-default">URLType - URL Type for identify respective Aurus iFrame</display-name>
+                <description xml:lang="x-default">This field identifies the Aurus provided 3-digit URL Type. Aurus will provide URL Type for identify respective iFrame, CSS for different Domain. 1-Iframe, 2-JS, 3- paypage, 4-Alternate Payment</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="AurusPay">
+                <display-name xml:lang="x-default">Aurus Pay Site Configuration Settings</display-name>
+                <attribute attribute-id="Aurus_corporateIdentifier"/>
+                <attribute attribute-id="Aurus_domainId"/>
+                <attribute attribute-id="Aurus_merchantIdentifier"/>
+                <attribute attribute-id="Aurus_storeId"/>
+                <attribute attribute-id="Aurus_terminalId"/>
+                <attribute attribute-id="Aurus_urlType"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payment-processors xmlns="http://www.demandware.com/xml/impex/paymentprocessor/2007-03-31">
+    <payment-processor processor-id="AURUSPAY_CREDIT">
+        <description>Aurus online credit card credit card payment processor (test and production systems).</description>
+        <preferences>
+            <all-instances/>
+            <development/>
+            <staging/>
+            <production/>
+        </preferences>
+    </payment-processor>
+</payment-processors>
