@@ -1,0 +1,15 @@
+<label for="paymentCardSelector">${Resource.msg('label.payment.selector', 'payment', null)}</label>
+<select id="paymentCardSelector"
+        name="paymentCardSelector"
+        class="paymentCardSelector form-control">
+    <isloop items="${pdict.customer.customerPaymentInstruments}" var="paymentInstrument" status="loopState">
+        <option class="row saved-payment-instrument ${loopState.first ? 'selected' : ''}" data-uuid="${paymentInstrument.UUID}">
+            <span>
+                ${paymentInstrument.creditCardType}
+                ${paymentInstrument.maskedCreditCardNumber}
+                ${Resource.msg('msg.card.type.ending', 'confirmation', null)}
+                ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear}
+            </span>
+        </option>
+    </isloop>
+</select>

@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.form.processor.auruspay_credit",
+            "script": "./cartridge/scripts/hooks/payment/processor/basic_credit_form_processor"
+        },
+        {
+            "name": "app.payment.processor.auruspay_credit",
+            "script": "./cartridge/scripts/hooks/payment/processor/basic_credit"
+        }
+    ]
+}

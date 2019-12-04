@@ -1,0 +1,54 @@
+<!--- applicable credit cards--->
+<div class="tab-pane active credit-card-content" id="credit-card-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+
+        <!--- payment method is credit card --->
+        <input  type="hidden" class="form-control"
+                name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+                value="CREDIT_CARD"
+        >
+
+        <!--- register/authenticated user --->
+        <isif condition="${pdict.customer.registeredUser}">
+            <div class="user-payment-instruments container ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? '' : 'checkout-hidden'}">
+                <!--- Stored user payments --->
+                <div class="stored-payments">
+                    <isinclude template="checkout/billing/storedPaymentInstruments" />
+                </div>
+
+                <div>
+                    <fieldset class="credit-card-form">
+                        <isinclude template="checkout/billing/creditCardForm" />
+                    </fieldset>
+                </div>
+
+            </div>
+
+            <div class="container">
+                <!--- Add new credit card button --->
+                <div class="row">
+                    <button type="button"
+                            class="btn btn-block add-payment btn-outline-primary" >
+                            ${Resource.msg('button.add.payment', 'checkout', null)}
+                    </button>
+                </div>
+
+                <!-- Back to saved payment intrument dropdowns -->
+                <div class="row">
+                    <button
+                        type="button"
+                        class="btn btn-block cancel-new-payment btn-outline-primary
+                        ${pdict.customer.registeredUser && pdict.customer.customerPaymentInstruments.length ? 'checkout-hidden' : 'checkout-hidden'}">
+                        ${Resource.msg('button.back.to.stored.payments', 'checkout', null)}
+                    </button>
+                </div>
+            </div>
+
+        <!--- guest user --->
+        <iselse/>
+            <fieldset class="credit-card-form">
+                <isinclude template="checkout/billing/creditCardForm" />
+            </fieldset>
+        </isif>
+    </fieldset>
+</div>
