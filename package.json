@@ -1,0 +1,58 @@
+{
+  "name": "int_aurus_sfra",
+  "version": "19.1.0",
+  "description": "This is the Aurus LINK cartridge used to integrate with Salesforce Commerce Cloud (SFCC) B2C platform's Storefront Reference Architecture (SFRA)",
+  "main": "index.js",
+  "scripts": {
+    "lint": "sgmf-scripts --lint js && sgmf-scripts --lint css",
+    "upload": "sgmf-scripts --upload -- ",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge int_aurus_sfra",
+    "compile:js": "sgmf-scripts --compile js",
+    "compile:scss": "sgmf-scripts --compile css",
+    "watch:static": "sgmf-scripts --watch static",
+    "watch": "sgmf-scripts --watch",
+    "build": "npm run compile:js;npm run compile:scss;",
+    "removeNodeModules": "rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@tridnguyen/config": "^2.3.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.0-beta.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb-base": "^5.0.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-sitegenesis": "~1.0.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "proxyquire": "1.7.4",
+    "sass-loader": "^7.0.3",
+    "sgmf-scripts": "^2.0.0",
+    "sinon": "^1.17.4",
+    "stylelint": "^7.1.0",
+    "stylelint-config-standard": "^12.0.0",
+    "stylelint-scss": "^1.3.4"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 10"
+  ],
+  "paths": {
+    "base": "../storefront-reference-architecture/cartridges/app_storefront_base/"
+  },
+  "dependencies": {
+    "bootstrap": "4.3.1",
+    "popper.js": "^1.14.7",
+    "cleave.js": "^1.0.2",
+    "flag-icon-css": "^2.3.0",
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.1.1"
+  }
+}
